@@ -5,7 +5,7 @@ type: portfolio
 status: active
 owner: founder
 created_at: 2026-07-21
-last_reviewed_at: 2026-07-21
+last_reviewed_at: 2026-08-10
 review_cycle: weekly
 ---
 
@@ -15,16 +15,27 @@ review_cycle: weekly
 
 Durante o bootstrap, nenhum projeto recebe automaticamente prioridade por estar “quase pronto” ou por já possuir código. A classificação final exige uma review de portfólio.
 
+A única exceção atual é o experimento **Conexus Sales Radar** durante a imersão Mitra, autorizado como discovery bounded pelo [`ADR-0004`](../decisions/adr/ADR-0004-mitra-sales-radar-bounded-experiment.md). A exceção não equivale à escolha do primeiro wedge comercial.
+
 | Projeto | Estado relatado pelo fundador | Estado de governança | Papel possível |
 |---|---|---|---|
 | MetalDocs | Em desenvolvimento; percebido como próximo de terminar | Unclassified | Governança documental e processos |
 | Marketplace Central | Em desenvolvimento ativo | Unclassified | Operação e inteligência de marketplaces |
-| Data Intelligence | Em desenvolvimento ativo | Unclassified | Camada de acesso inteligente aos dados empresariais |
+| Data Intelligence / MNOS | Em desenvolvimento ativo | Unclassified | Mapeamento e acesso inteligente aos dados empresariais |
 | Metal Shopping | Desenvolvimento interrompido | Unclassified | Precificação e inteligência comercial |
 | Development Harness | Em desenvolvimento | Unclassified | Infraestrutura interna de engenharia |
-| Conexus Sales Intelligence | Ideia ainda não iniciada como produto | Discovery | Possível wedge de inteligência comercial |
+| Conexus Sales Intelligence | Ideia ainda não iniciada como produto permanente | Discovery / bounded experiment | Inteligência comercial; Sales Radar é o experimento atual na Mitra |
 
-## Avaliação necessária
+## Experimento atual
+
+**Sales Radar — Orçamentos em Risco & Next Best Action**
+
+- Ambiente: imersão Mitra.
+- Natureza: experimento de product discovery.
+- Status: autorizado apenas durante a imersão.
+- Próxima decisão: `continue / reshape / park / stop` após observar evidências.
+
+## Avaliação necessária do portfólio permanente
 
 Cada item será comparado por:
 
