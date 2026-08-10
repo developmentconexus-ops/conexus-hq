@@ -1,10 +1,10 @@
 ---
 id: SPEC-MITRA-SALES-RADAR-001
 title: Conexus Sales Radar — Design de Discovery na Mitra
-status: approved
+status: proposed
 type: product-discovery-design
 owner: founder
-approved_at: 2026-08-10
+proposed_at: 2026-08-10
 ---
 
 # Conexus Sales Radar — Design de Discovery na Mitra
@@ -308,4 +308,4 @@ Uma aplicação genérica e polida não é necessária.
 
 ## 20. Governança
 
-Este design é governado pelo `ADR-0004`. A aprovação deste documento autoriza somente o experimento bounded de discovery. Não autoriza iniciativa permanente de produto, rollout de produção ou implementação mais ampla da Conexus.
+Este design é governado pelo `ADR-0004`. A escolha do experimento foi aprovada; este documento permanece `proposed` até revisão explícita do design escrito. Após essa revisão, poderá ser promovido a `approved` e somente então seguirá para plano de implementação.
