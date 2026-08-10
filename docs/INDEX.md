@@ -5,7 +5,7 @@ type: index
 status: active
 owner: founder
 created_at: 2026-07-21
-last_reviewed_at: 2026-07-21
+last_reviewed_at: 2026-08-10
 ---
 
 # Índice do Conhecimento da Conexus
@@ -23,7 +23,7 @@ Este arquivo roteia humanos e agentes para a menor quantidade de contexto necess
 
 - Contexto e restrições do fundador: [`company/founder-context.md`](company/founder-context.md)
 - Visão preliminar: [`company/vision.md`](company/vision.md)
-- Tese estratégica atual: [`company/strategy.md`](company/strategy.md)
+- Tese estratégica e direção futura de Enterprise Brain: [`company/strategy.md`](company/strategy.md)
 - Índice da área: [`company/README.md`](company/README.md)
 
 ## Mercado e evidências
@@ -34,8 +34,14 @@ Este arquivo roteia humanos e agentes para a menor quantidade de contexto necess
 ## Portfólio
 
 - Estado consolidado dos projetos: [`portfolio/portfolio.md`](portfolio/portfolio.md)
+- Conexus Sales Intelligence e Sales Radar: [`portfolio/products/conexus-sales-intelligence.md`](portfolio/products/conexus-sales-intelligence.md)
 - One-pagers dos produtos: [`portfolio/products/`](portfolio/products/)
 - Índice da área: [`portfolio/README.md`](portfolio/README.md)
+
+## Experimento atual — Imersão Mitra
+
+- Autorização, limites e expiração: [`ADR-0004`](decisions/adr/ADR-0004-mitra-sales-radar-bounded-experiment.md)
+- Design aprovado da vertical slice: [`superpowers/specs/2026-08-10-mitra-sales-radar-discovery-design.md`](superpowers/specs/2026-08-10-mitra-sales-radar-discovery-design.md)
 
 ## Decisões
 
@@ -51,6 +57,7 @@ Este arquivo roteia humanos e agentes para a menor quantidade de contexto necess
 - Reviews semanais: [`operations/weekly-reviews/`](operations/weekly-reviews/)
 - Índice da área: [`operations/README.md`](operations/README.md)
 
-## Especificação aprovada
+## Especificações aprovadas
 
-- [`superpowers/specs/2026-07-21-conexus-company-os-design.md`](superpowers/specs/2026-07-21-conexus-company-os-design.md)
+- Company OS v0.1: [`superpowers/specs/2026-07-21-conexus-company-os-design.md`](superpowers/specs/2026-07-21-conexus-company-os-design.md)
+- Mitra Sales Radar discovery: [`superpowers/specs/2026-08-10-mitra-sales-radar-discovery-design.md`](superpowers/specs/2026-08-10-mitra-sales-radar-discovery-design.md)
