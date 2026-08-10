@@ -41,7 +41,7 @@ Este arquivo roteia humanos e agentes para a menor quantidade de contexto necess
 ## Experimento atual — Imersão Mitra
 
 - Autorização, limites e expiração: [`ADR-0004`](decisions/adr/ADR-0004-mitra-sales-radar-bounded-experiment.md)
-- Design aprovado da vertical slice: [`superpowers/specs/2026-08-10-mitra-sales-radar-discovery-design.md`](superpowers/specs/2026-08-10-mitra-sales-radar-discovery-design.md)
+- Design em review da vertical slice: [`superpowers/specs/2026-08-10-mitra-sales-radar-discovery-design.md`](superpowers/specs/2026-08-10-mitra-sales-radar-discovery-design.md)
 
 ## Decisões
 
@@ -57,7 +57,7 @@ Este arquivo roteia humanos e agentes para a menor quantidade de contexto necess
 - Reviews semanais: [`operations/weekly-reviews/`](operations/weekly-reviews/)
 - Índice da área: [`operations/README.md`](operations/README.md)
 
-## Especificações aprovadas
+## Especificações e designs
 
-- Company OS v0.1: [`superpowers/specs/2026-07-21-conexus-company-os-design.md`](superpowers/specs/2026-07-21-conexus-company-os-design.md)
-- Mitra Sales Radar discovery: [`superpowers/specs/2026-08-10-mitra-sales-radar-discovery-design.md`](superpowers/specs/2026-08-10-mitra-sales-radar-discovery-design.md)
+- Company OS v0.1 — aprovado: [`superpowers/specs/2026-07-21-conexus-company-os-design.md`](superpowers/specs/2026-07-21-conexus-company-os-design.md)
+- Mitra Sales Radar discovery — proposto para revisão: [`superpowers/specs/2026-08-10-mitra-sales-radar-discovery-design.md`](superpowers/specs/2026-08-10-mitra-sales-radar-discovery-design.md)
