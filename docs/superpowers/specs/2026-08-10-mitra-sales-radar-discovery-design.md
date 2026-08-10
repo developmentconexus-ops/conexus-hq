@@ -1,311 +1,311 @@
 ---
 id: SPEC-MITRA-SALES-RADAR-001
-title: Conexus Sales Radar — Mitra Discovery Design
+title: Conexus Sales Radar — Design de Discovery na Mitra
 status: approved
 type: product-discovery-design
 owner: founder
 approved_at: 2026-08-10
 ---
 
-# Conexus Sales Radar — Mitra Discovery Design
+# Conexus Sales Radar — Design de Discovery na Mitra
 
-## 1. Purpose
+## 1. Propósito
 
-Use the Mitra immersion as a bounded product-discovery environment to test one vertical slice of the future Conexus commercial-intelligence vision without starting a permanent parallel product.
+Usar a imersão Mitra como um ambiente bounded de product discovery para testar uma vertical slice da futura visão de inteligência comercial da Conexus sem iniciar, por inércia, outro produto permanente em paralelo.
 
-The experiment asks:
+O experimento responde à pergunta:
 
-> Can real commercial data be converted into an auditable daily prioritization of quotations that deserve attention, with a useful next-best action for the seller?
+> Dados comerciais reais podem ser transformados em uma priorização diária e auditável de orçamentos que merecem atenção, acompanhada de uma próxima melhor ação útil para o vendedor?
 
-The experiment is not intended to prove the complete Conexus vision, replace MNOS, build a CRM, or establish Mitra as the production architecture.
+O experimento não pretende provar toda a visão da Conexus, substituir o MNOS, construir um CRM nem definir a Mitra como arquitetura de produção.
 
-## 2. Why this experiment
+## 2. Por que este experimento
 
-Several candidate projects were considered:
+Foram considerados vários projetos candidatos:
 
-1. **MetalDocs** — already advanced; the immersion would duplicate an existing implementation and yield limited new product learning.
-2. **Marketplace Central** — already under construction and strongly dependent on marketplace-specific API work.
-3. **Data Intelligence / MNOS** — strategically relevant but already an active technical stream; rebuilding it in Mitra would duplicate infrastructure work.
-4. **Price tracking** — valuable, but the hardest problem is external price acquisition rather than the application layer the immersion is best suited to exercise.
-5. **Purchasing forecast** — potentially high value, but requires more mature historical data treatment, lead-time modeling, rupture handling and validation than is appropriate for a bounded immersion.
-6. **Generic CRM** — easy to demonstrate but weakly differentiated and prone to scope expansion.
-7. **Sales Radar** — selected because it can exercise data integration, business rules, ranking, AI explanation, user action and measurable commercial outcomes in one narrow end-to-end flow.
+1. **MetalDocs** — já está avançado; a imersão duplicaria uma implementação existente e geraria pouco aprendizado novo de produto.
+2. **Marketplace Central** — já está em construção e depende fortemente de integrações específicas com APIs de marketplaces.
+3. **Data Intelligence / MNOS** — é estrategicamente relevante, mas já constitui uma frente técnica existente; reconstruí-lo na Mitra duplicaria trabalho de infraestrutura.
+4. **Rastreamento de preços** — possui valor, porém o problema mais difícil está na aquisição externa dos preços, e não na camada de aplicação em que a imersão gera maior aprendizado.
+5. **Previsão de compras** — pode ter alto valor, mas exige tratamento mais maduro de histórico, lead time, ruptura, sazonalidade e validação do que cabe em uma imersão bounded.
+6. **CRM genérico** — é simples de demonstrar, porém pouco diferenciado e propenso a expansão de escopo.
+7. **Sales Radar** — escolhido por conseguir exercitar integração de dados, regras de negócio, ranking, explicação por IA, ação do usuário e resultado comercial mensurável em um único fluxo estreito ponta a ponta.
 
-## 3. Users
+## 3. Usuários
 
-### Primary user
+### Usuário primário
 
-A seller responsible for following quotations and deciding where to spend attention.
+Vendedor responsável por acompanhar seus orçamentos e decidir onde investir atenção.
 
-### Secondary user
+### Usuário secundário
 
-A commercial manager who needs to see where potential revenue is at risk and which opportunities deserve intervention.
+Gestor comercial que precisa enxergar onde há receita potencial em risco e quais oportunidades merecem intervenção.
 
-## 4. User problem
+## 4. Problema do usuário
 
-Commercial operations accumulate many quotations and fragmented signals. Sellers and managers may not know:
+Operações comerciais acumulam muitos orçamentos e sinais fragmentados. Vendedores e gestores podem não saber:
 
-- which quotations deserve attention today;
-- which signals make an opportunity important;
-- what relevant context is missing;
-- what action should be taken next.
+- quais orçamentos merecem atenção hoje;
+- quais sinais tornam uma oportunidade importante;
+- qual contexto relevante está faltando;
+- qual ação deveria ser tomada em seguida.
 
-Manual review does not scale and can favor the most recent, memorable or loudest opportunities rather than the economically relevant ones.
+A revisão manual não escala e pode favorecer as oportunidades mais recentes, memoráveis ou urgentes em aparência, em vez das economicamente relevantes.
 
-## 5. Product hypothesis
+## 5. Hipótese de produto
 
-If the system combines reliable commercial signals — such as quotation age, quotation value, customer history, item composition, availability and other trustworthy indicators — it can produce a more useful prioritization than undifferentiated manual review and can help a seller take a contextual next action.
+Se o sistema combinar sinais comerciais confiáveis — como idade do orçamento, valor, histórico do cliente, composição dos itens, disponibilidade e outros indicadores compreendidos — poderá produzir uma priorização mais útil do que uma revisão manual indiferenciada e ajudar o vendedor a tomar uma próxima ação contextual.
 
-This is a hypothesis, not an accepted fact.
+Isso permanece uma hipótese, não um fato aceito.
 
 ## 6. Vertical slice
 
-The minimum end-to-end experience is:
+A experiência mínima ponta a ponta é:
 
 ```text
-real commercial data
+dados comerciais reais
         ↓
-deterministic signals
+sinais determinísticos
         ↓
-opportunity ranking
+ranking de oportunidades
         ↓
-ranked quotation list
+lista priorizada de orçamentos
         ↓
-auditable explanation
+explicação auditável
         ↓
-AI-assisted next-best action
+next-best action assistida por IA
         ↓
-seller action
+ação do vendedor
         ↓
-observed outcome
+resultado observado
 ```
 
-### Minimum user flow
+### Fluxo mínimo do usuário
 
-1. User opens the Sales Radar.
-2. System shows a small ranked list of quotations that deserve attention.
-3. User opens one opportunity.
-4. System shows the objective signals that caused the ranking.
-5. System offers a suggested next action and optional wording/support.
-6. User records whether an action was taken.
-7. When feasible, a later outcome is associated with the opportunity.
+1. O usuário abre o Sales Radar.
+2. O sistema exibe uma lista pequena e ranqueada de orçamentos que merecem atenção.
+3. O usuário abre uma oportunidade.
+4. O sistema mostra os sinais objetivos responsáveis pela priorização.
+5. O sistema oferece uma próxima ação sugerida e, opcionalmente, apoio de comunicação.
+6. O usuário registra se realizou uma ação.
+7. Quando viável, um resultado posterior é associado à oportunidade.
 
-## 7. Data scope
+## 7. Escopo de dados
 
-Use only fields needed by the experiment.
+Usar apenas os campos necessários ao experimento.
 
-Candidate inputs:
+Entradas candidatas:
 
-- quotation identifier;
-- quotation creation/last-activity dates;
-- quotation value;
-- quotation items and quantities;
-- seller identifier;
-- customer identifier or anonymized stable key;
-- product identifier/category;
-- stock or availability when reliable;
-- historical purchases or prior quotations when available;
-- price and margin only when their semantics are understood and trustworthy.
+- identificador do orçamento;
+- datas de criação e/ou última atividade;
+- valor do orçamento;
+- itens e quantidades;
+- identificador do vendedor;
+- identificador do cliente ou chave estável anonimizada;
+- identificador e categoria do produto;
+- estoque ou disponibilidade quando confiáveis;
+- compras ou orçamentos históricos quando disponíveis;
+- preço e margem somente quando suas semânticas estiverem compreendidas e forem confiáveis.
 
-### Data evidence rule
+### Regra de evidência dos dados
 
-For claims that the experiment works, use either:
+Para afirmar que o experimento funciona, usar uma destas alternativas:
 
-- a safe read-only connection to real data; or
-- a sanitized extract of real historical data.
+- conexão segura e somente leitura com dados reais; ou
+- extrato sanitizado de dados históricos reais.
 
-Synthetic data may support UI construction only. It must not be used as evidence that the ranking or business hypothesis is valid.
+Dados sintéticos podem ser usados para construir e testar interface, mas não podem servir como evidência de que o ranking ou a hipótese de negócio funcionam.
 
-## 8. Intelligence boundary
+## 8. Fronteira da inteligência
 
-The design deliberately separates deterministic facts from generative behavior.
+O design separa deliberadamente fatos determinísticos de comportamento generativo.
 
-### Deterministic layer
+### Camada determinística
 
-Responsible for:
+Responsável por:
 
-- dates;
-- monetary values;
-- item counts;
-- stock/availability;
-- customer history calculations;
-- business-rule flags;
-- ranking inputs;
-- links back to source records.
+- datas;
+- valores monetários;
+- quantidades;
+- estoque e disponibilidade;
+- cálculos sobre histórico do cliente;
+- flags de regras de negócio;
+- sinais usados no ranking;
+- referência aos registros de origem.
 
-### AI layer
+### Camada de IA
 
-May:
+Pode:
 
-- summarize why an opportunity matters;
-- turn multiple signals into a concise explanation;
-- suggest questions for the seller;
-- draft a contact approach;
-- explain relevant product/context information when grounded in available evidence.
+- resumir por que uma oportunidade merece atenção;
+- transformar múltiplos sinais em uma explicação concisa;
+- sugerir perguntas para o vendedor;
+- sugerir abordagem de contato;
+- explicar contexto comercial ou de produto quando fundamentado nas evidências disponíveis.
 
-The AI must not manufacture values, stock, historical behavior or ranking evidence.
+A IA não deve fabricar valores, estoque, comportamento histórico ou evidência de ranking.
 
-## 9. Ranking strategy
+## 9. Estratégia de ranking
 
-The immersion does not require a predictive ML model.
+A imersão não exige um modelo preditivo de machine learning.
 
-Start with an interpretable rule/score or ordering based on trustworthy signals. Examples of candidate signals include:
+Começar com regras, score ou ordenação interpretável baseados em sinais confiáveis. Sinais candidatos incluem:
 
-- high quotation value;
-- elapsed time without activity;
-- prior customer purchases;
-- product availability;
-- commercial stage when reliable;
-- known product/category context.
+- alto valor do orçamento;
+- tempo decorrido sem atividade;
+- compras anteriores do cliente;
+- disponibilidade de produto;
+- estágio comercial quando confiável;
+- contexto conhecido de produto ou categoria.
 
-Weights or thresholds are hypotheses and must remain inspectable. A more sophisticated model is allowed only if the bounded experiment produces evidence that simple interpretable signals are insufficient.
+Pesos e thresholds são hipóteses e precisam permanecer inspecionáveis. Um modelo mais sofisticado só deve ser considerado se o experimento bounded produzir evidência de que sinais simples e interpretáveis são insuficientes.
 
-## 10. Explanation design
+## 10. Design da explicação
 
-Every priority shown to a user must answer:
+Toda prioridade exibida ao usuário precisa responder:
 
-1. **Why is this here?**
-2. **Which facts support that conclusion?**
-3. **What should I consider doing next?**
+1. **Por que isto está aqui?**
+2. **Quais fatos sustentam essa conclusão?**
+3. **O que devo considerar fazer em seguida?**
 
-Example structure:
+Exemplo:
 
 ```text
-Quotation: R$ 48,210
-Last activity: 6 days ago
-Customer history: 4 prior purchases
-Availability: items available according to source data
+Orçamento: R$ 48.210
+Última atividade: há 6 dias
+Histórico do cliente: 4 compras anteriores
+Disponibilidade: itens disponíveis segundo a fonte consultada
 
-Why prioritized:
-High-value quotation with no recent activity and an established customer relationship.
+Por que foi priorizado:
+Orçamento de alto valor, sem atividade recente, de cliente com relacionamento anterior.
 
-Suggested next action:
-Confirm whether the project timeline changed and whether the customer needs assistance finalizing item quantities or complementary items.
+Próxima ação sugerida:
+Confirmar se o cronograma da obra mudou e se o cliente precisa de apoio para fechar quantidades ou itens complementares.
 ```
 
-The explanation must make it possible for the seller to challenge the recommendation.
+A explicação deve permitir que o vendedor conteste a recomendação.
 
-## 11. Product-complement opportunity
+## 11. Oportunidade de produtos complementares
 
-Complementary-item suggestions are strategically attractive but are not required for the first flow.
+Sugestões de itens complementares são estrategicamente atraentes, mas não são requisito do primeiro fluxo.
 
-If time remains after the quotation-priority flow works, one limited complementary-item rule may be added as an optional extension. This must not expand into a complete recommender system during the immersion.
+Se houver tempo após o fluxo de priorização de orçamentos funcionar, uma única regra limitada de complementaridade pode ser adicionada como extensão opcional. Isso não deve evoluir para um recomendador completo durante a imersão.
 
-## 12. Historical evaluation
+## 12. Avaliação histórica
 
-When historical data permits, perform a basic backtest:
+Quando os dados históricos permitirem, executar um backtest simples:
 
-1. Select a historical cutoff date `T0`.
-2. Restrict the experiment to information that would have been available at `T0`.
-3. Generate the ranking.
-4. Inspect what happened afterward.
-5. Record where the ranking was useful, misleading or impossible to evaluate.
+1. Selecionar uma data histórica de corte `T0`.
+2. Restringir o experimento às informações que estariam disponíveis em `T0`.
+3. Gerar o ranking.
+4. Inspecionar o que aconteceu depois.
+5. Registrar onde o ranking foi útil, enganoso ou impossível de avaliar.
 
-This does not establish causality, but it provides better evidence than subjective enthusiasm alone.
+Isso não estabelece causalidade, mas produz evidência melhor do que entusiasmo subjetivo isolado.
 
-## 13. Live pilot
+## 13. Piloto real
 
-If operationally safe and feasible, expose the ranked list to one or more representative users and record:
+Se for operacionalmente seguro e viável, mostrar a lista priorizada a um ou mais usuários representativos e registrar:
 
-- whether they considered the opportunity relevant;
-- whether they opened it;
-- whether they took the suggested or another action;
-- whether a quotation was reactivated, changed, won or lost;
-- qualitative reasons for ignoring a recommendation.
+- se consideraram a oportunidade relevante;
+- se abriram a oportunidade;
+- se executaram a ação sugerida ou outra ação;
+- se o orçamento foi reativado, alterado, ganho ou perdido;
+- razões qualitativas para ignorar uma recomendação.
 
-No automated external communication is required for the immersion.
+Nenhuma comunicação externa automatizada é necessária para a imersão.
 
-## 14. Metrics
+## 14. Métricas
 
-### Long-term economic metric candidate
+### Métrica econômica candidata de longo prazo
 
-**Revenue or contribution margin recovered/incrementally generated from opportunities surfaced by the system.**
+**Receita ou margem de contribuição recuperada/incremental associada às oportunidades encontradas pelo sistema.**
 
-### Immersion evidence metrics
+### Métricas de evidência para a imersão
 
-- number of ranked opportunities inspected;
-- percentage judged relevant by representative users;
-- actions taken after recommendation;
-- quotations reactivated when measurable;
-- ranking explanations with traceable supporting data;
-- false or misleading recommendations and their causes;
-- data gaps discovered.
+- quantidade de oportunidades ranqueadas e inspecionadas;
+- percentual considerado relevante por usuários representativos;
+- ações executadas após recomendação;
+- orçamentos reativados quando mensurável;
+- explicações de ranking com dados de suporte rastreáveis;
+- recomendações falsas ou enganosas e suas causas;
+- lacunas de dados descobertas.
 
-No arbitrary target is invented before observing baseline data.
+Nenhuma meta numérica arbitrária deve ser inventada antes de observar o baseline real.
 
-## 15. Failure and uncertainty handling
+## 15. Tratamento de falhas e incerteza
 
-The application should prefer explicit uncertainty over fabricated confidence.
+A aplicação deve preferir incerteza explícita a confiança fabricada.
 
-Examples:
+Exemplos:
 
-- If stock is stale or unavailable, label availability as unknown.
-- If margin semantics are not trustworthy, exclude margin rather than estimate it silently.
-- If customer history is incomplete, disclose the limitation.
-- If the ranking cannot explain why an item is prioritized, do not present the ranking as authoritative.
-- If the AI response cannot be grounded in available facts, fall back to the deterministic context rather than inventing an answer.
+- se o estoque estiver desatualizado ou indisponível, marcar disponibilidade como desconhecida;
+- se a semântica de margem não for confiável, excluir margem em vez de estimá-la silenciosamente;
+- se o histórico do cliente estiver incompleto, expor a limitação;
+- se o ranking não conseguir explicar por que um item foi priorizado, não apresentá-lo como autoridade;
+- se a resposta de IA não puder ser fundamentada nos fatos disponíveis, retornar o contexto determinístico em vez de inventar uma resposta.
 
-## 16. Security and privacy
+## 16. Segurança e privacidade
 
-For the immersion:
+Durante a imersão:
 
-- use the minimum necessary data;
-- prefer stable anonymized customer keys when identity is not required;
-- do not expose credentials or database secrets in prompts or project documentation;
-- avoid unnecessary personal data;
-- use read-only access when direct database access is used;
-- do not copy production dumps into the Conexus HQ repository.
+- usar o mínimo necessário de dados;
+- preferir chaves estáveis anonimizadas de cliente quando identidade não for necessária;
+- não expor credenciais ou segredos de banco em prompts ou documentação;
+- evitar dados pessoais desnecessários;
+- usar acesso somente leitura quando houver conexão direta ao banco;
+- não copiar dumps de produção para o repositório `conexus-hq`.
 
-## 17. Out of scope
+## 17. Fora de escopo
 
-The following are explicitly out of scope:
+Estão explicitamente fora de escopo:
 
-- full CRM;
-- complete sales pipeline replacement;
-- purchasing forecast;
-- competitor-price crawling;
-- full substitute/complement recommendation engine;
-- autonomous WhatsApp outreach;
-- general-purpose Enterprise Brain;
-- production-grade MNOS replacement;
-- definitive Conexus data architecture;
-- multi-agent orchestration platform;
-- migration away from existing ERP/CRM systems.
+- CRM completo;
+- substituição completa do pipeline comercial;
+- previsão de compras;
+- crawling de preços de concorrentes;
+- recomendador completo de substitutos e complementares;
+- outreach autônomo por WhatsApp;
+- Enterprise Brain de propósito geral;
+- substituição do MNOS em produção;
+- arquitetura definitiva de dados da Conexus;
+- plataforma própria de orquestração multiagente;
+- migração para fora dos sistemas ERP/CRM existentes.
 
-## 18. Relation to Conexus strategy
+## 18. Relação com a estratégia da Conexus
 
-The experiment is valuable because it exercises a representative Conexus pattern:
+O experimento é valioso porque exercita um padrão representativo da Conexus:
 
 ```text
-enterprise systems
+sistemas empresariais
       ↓
-trusted business context
+contexto de negócio confiável
       ↓
-intelligence
+inteligência
       ↓
-recommendation
+recomendação
       ↓
-human action
+ação humana
       ↓
-measured outcome
+resultado medido
 ```
 
-It can also reveal which knowledge relationships a future Enterprise Brain actually needs, rather than designing the entire knowledge layer in advance.
+Ele também pode revelar quais relações de conhecimento um futuro Enterprise Brain realmente precisa, em vez de desenhar toda a camada de conhecimento antecipadamente.
 
-## 19. Completion criteria for the immersion
+## 19. Critérios de conclusão da imersão
 
-The bounded experiment is complete when the team can show:
+O experimento bounded estará completo quando for possível demonstrar:
 
-1. one working end-to-end quotation-priority flow;
-2. real or sanitized-real evidence behind the ranking;
-3. auditable explanation of at least the principal ranking signals;
-4. AI-generated recommendation grounded in those signals;
-5. at least one retrospective evaluation or real-user evaluation when data/access permit;
-6. a written list of learned constraints, missing data and false assumptions;
-7. a post-immersion recommendation: `continue`, `reshape`, `park` or `stop`.
+1. um fluxo ponta a ponta funcional de priorização de orçamentos;
+2. evidência real ou sanitizada-real por trás do ranking;
+3. explicação auditável dos principais sinais usados;
+4. recomendação gerada por IA fundamentada nesses sinais;
+5. ao menos uma avaliação retrospectiva ou avaliação com usuário real quando dados e acesso permitirem;
+6. lista escrita de restrições aprendidas, dados faltantes e hipóteses incorretas;
+7. recomendação pós-imersão: `continue`, `reshape`, `park` ou `stop`.
 
-A polished general-purpose application is not required.
+Uma aplicação genérica e polida não é necessária.
 
-## 20. Governance
+## 20. Governança
 
-This design is governed by `ADR-0004`. Approval of this design authorizes the bounded discovery experiment only. It does not authorize a permanent product initiative, production rollout or broader Conexus implementation.
+Este design é governado pelo `ADR-0004`. A aprovação deste documento autoriza somente o experimento bounded de discovery. Não autoriza iniciativa permanente de produto, rollout de produção ou implementação mais ampla da Conexus.
