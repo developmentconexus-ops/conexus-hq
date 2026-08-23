@@ -1,66 +1,51 @@
-# Conexus HQ — Agent Operating Contract
+# Conexus HQ — Agent Bootstrap
 
-## Purpose
+## Start here
 
-This repository is the institutional source of truth for Conexus. It is not a product source-code repository.
+```text
+AGENTS.md
+→ docs/index.md
+→ docs/roadmap.md
+→ 1–2 task-specific owning documents
+```
 
-## Required context
+Default context is at most five files. Do not recursively read `docs/`, Git history, old PRs, research, or review material before a concrete task requires them.
 
-Before giving strategic advice or changing company documents:
+## Organizational standards
 
-1. Read `docs/INDEX.md`.
-2. Read `docs/NOW.md`.
-3. Read `docs/decisions/decision-log.md`.
-4. Read the latest weekly review, when one exists.
-5. Read the local area index and documents relevant to the request.
+Engineering reasoning follows `developmentconexus-ops/conexus-methodology/METHOD.md` v1.0.0. Repository organization/workflow follows `developmentconexus-ops/conexus-methodology/REPOSITORY-STANDARD.md` v1.0.0.
 
-Do not read the entire repository by default. Use progressive disclosure and follow indexes to the smallest sufficient context set.
+Current accepted authority beats historical Git content. Research, Evidence, reviewer output, conversations, and implementation are not institutional authority by existence.
 
-## Information classification
+## HQ authority boundary
 
-Always distinguish:
+Conexus HQ may own company-level strategy, portfolio direction, brand/naming, institutional operating decisions, and the relationship among company initiatives.
 
-- **Fact** — directly observed or reliably established.
-- **Evidence** — a source supporting a claim.
-- **Hypothesis** — testable statement not yet validated.
-- **Assumption** — condition temporarily accepted for planning.
-- **Proposal** — recommendation not yet approved.
-- **Accepted decision** — formally recorded choice.
-- **Commitment** — accepted outcome with owner and timing.
+Conexus HQ must not redefine:
 
-Never present a hypothesis, assumption, or proposal as an accepted decision.
+- Conexus OS Product semantics or architecture;
+- MetalDocs Product semantics or architecture;
+- Marketplace Central Product semantics or architecture;
+- the DevelopmentConexus Engineering Method or Repository Standard.
 
-## Source-of-truth rules
+A company decision may set portfolio direction without absorbing a product repository's semantic authority.
 
-- Chat conversations are not official records.
-- Accepted material decisions require a decision record.
-- Do not silently rewrite accepted decisions; supersede them with a new record.
-- Do not duplicate canonical information across documents.
-- Mark superseded or archived documents explicitly.
-- Update indexes when creating, moving, or archiving documents.
-- Update `docs/NOW.md` whenever the active objective, initiative, milestone, blocker, or commitment changes.
-- Preserve links to supporting evidence whenever available.
+## Hard stops
 
-## Change protocol
+- `docs/roadmap.md` is the sole mutable current-stage/status/next-action authority.
+- `Conexus` and `Conexus OS` are working names, not ratified brand names.
+- HQ is an authored institutional source of truth, not the future Enterprise Brain runtime. Do not add RAG, vector storage, agent memory, knowledge-runtime infrastructure, or speculative ingestion machinery merely because HQ knowledge may later feed the Brain.
+- MetalDocs and Marketplace Central may converge strategically into the future platform only through explicit product/architecture work in their owning repositories; do not merge domains or code by implication.
+- Unknown stays unknown. Proposals, hypotheses, research, and reviewer findings never become decisions silently.
+- Never commit credentials, secrets, customer PII, raw ERP exports, confidential employee data, or unnecessary operating-company commercial data.
 
-For material changes:
+## Git, review, and verification
 
-1. Identify the affected canonical documents.
-2. State the proposed change and rationale.
-3. Obtain founder approval when strategy, portfolio priority, scope, deadline, or governance changes.
-4. Apply the change through a reviewable diff.
-5. Update related indexes and decision records.
-6. Report assumptions, unresolved contradictions, and downstream consequences.
+- No direct commits to `main`; normal integration is squash merge after explicit operator merge authorization.
+- One coherent gate owns one Draft PR by default.
+- Temporary work belongs under `docs/work/**` and must not enter the merge candidate or `main`.
+- Independent Fable review uses a branch derived from the exact candidate and may differ only by `docs/work/current/ai-dialog.md`; reviewer output is Evidence, never authority.
+- Run `python scripts/verify_repository.py` before claiming the candidate is repository-conformant.
+- Never merge without explicit operator authorization.
 
-## Writing rules
-
-- Prefer concise Markdown with descriptive headings.
-- Keep one primary subject per document.
-- Start institutional documents with YAML frontmatter.
-- Use ISO dates (`YYYY-MM-DD`).
-- Prefer relative repository links.
-- Avoid vague words such as “soon”, “later”, or “almost” without a concrete meaning.
-
-## Security
-
-Never commit secrets, credentials, tokens, personal customer data, raw ERP exports, confidential employee data, or unnecessary Metalnobra commercial data.
+Current stage and exact next action live only in [docs/roadmap.md](docs/roadmap.md).

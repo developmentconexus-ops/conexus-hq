@@ -1,20 +1,13 @@
 # Conexus HQ
 
-Repositório institucional da **Conexus**. Ele preserva visão, estratégia, decisões, portfólio, pesquisas e o estado operacional atual da empresa.
+Conexus HQ is the institutional source of truth for the company currently operating under the **working name Conexus**.
 
-> **Este repositório é a fonte oficial do conhecimento institucional.** Conversas com agentes ajudam a raciocinar, mas só se tornam oficiais quando registradas aqui.
+It owns company-level strategy, portfolio direction, brand and naming decisions, and institutional governance. Product semantics and technical architecture remain in their owning repositories.
 
-## Comece por aqui
+## Start here
 
-1. Leia [`docs/INDEX.md`](docs/INDEX.md).
-2. Consulte [`docs/NOW.md`](docs/NOW.md) para o estado atual.
-3. Consulte [`docs/decisions/decision-log.md`](docs/decisions/decision-log.md) antes de propor mudanças materiais.
-4. Siga [`AGENTS.md`](AGENTS.md) ao usar Codex, Claude Code ou outro agente.
+- [Agent bootstrap](AGENTS.md)
+- [Documentation index](docs/index.md)
+- [Current roadmap](docs/roadmap.md)
 
-## Escopo
-
-Este repositório contém documentação empresarial e operacional. Código de produto permanece em repositórios separados.
-
-## Estado atual
-
-A iniciativa ativa é o **bootstrap do Conexus Company OS v0.1**. O objetivo é consolidar contexto, inventariar projetos e escolher uma única iniciativa de produto antes de ampliar qualquer desenvolvimento.
+`Conexus` and `Conexus OS` are working names until the naming/brand gates ratify otherwise.
