@@ -17,5 +17,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Verify repository tests
+        run: python scripts/test_verify_repository.py
+
       - name: Verify repository
         run: python scripts/verify_repository.py
