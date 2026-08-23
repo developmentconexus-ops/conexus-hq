@@ -8,6 +8,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 errors: list[str] = []
 
+
+def exact_path_exists(root: Path, relative: str) -> bool:
+    """Return True only when every path component exists with exact casing."""
+    current = root
+    for part in Path(relative).parts:
+        if not current.is_dir():
+            return False
+        entries = {entry.name: entry for entry in current.iterdir()}
+        if part not in entries:
+            return False
+        current = entries[part]
+    return current.exists()
+
+
 REQUIRED = [
     "README.md",
     "AGENTS.md",
@@ -52,7 +66,7 @@ forbidden_exact = [
     "CLAUDE.md",
 ]
 for relative in forbidden_exact:
-    if (ROOT / relative).exists():
+    if exact_path_exists(ROOT, relative):
         errors.append(f"forbidden legacy surface present: {relative}")
 
 for prefix in ["docs/superpowers", "docs/work"]:
