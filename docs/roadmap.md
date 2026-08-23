@@ -8,7 +8,10 @@ This is the sole mutable current-stage/status/allowed-work/next-action authority
 ```text
 COMPANY NAME                    CONEXUS / WORKING NAME / NOT RATIFIED
 PRODUCT NAME                    CONEXUS OS / WORKING NAME / NOT RATIFIED
-HQ-0 REPOSITORY FOUNDATION      OPEN / ACTIVE
+HQ-0 REPOSITORY FOUNDATION      OPEN / ACTIVE / EXTERNAL PROTECTION BLOCKER
+HQ-0 FABLE REVIEW               NOT CONVERGED / MATERIAL=2 / NON-MATERIAL=8
+HQ-0 F2 VERIFIER DEFECT         CORRECTED / REGRESSION TEST GREEN
+HQ-0 F1 MAIN PROTECTION         BLOCKED BY CURRENT PRIVATE-REPO PLAN CAPABILITY
 HQ-1 COMPANY THESIS             NOT OPEN
 HQ-2 CATEGORY / MARKET / ICP    NOT OPEN
 HQ-3 PORTFOLIO ARCHITECTURE     NOT OPEN
@@ -37,14 +40,30 @@ HQ-0 must close all of the following:
 - fresh independent review for the cross-repository authority boundary;
 - explicit operator ratification and separate merge authorization.
 
+## Current review adjudication
+
+Independent Fable review against candidate `3a33df62ba4928ded8346ce1a98a056136a07832` returned:
+
+```text
+VERDICT                       NOT CONVERGED
+MATERIAL FINDINGS             2
+NON-MATERIAL FINDINGS         8
+RATIFICATION RECOMMENDATION   NOT READY
+```
+
+Lead disposition:
+
+- **F2 — case-insensitive forbidden-path false positive:** accepted as a bounded implementation defect. A regression test first reproduced the missing exact-path behavior; the verifier now performs exact-component casing checks and the aggregate `required` job passes both the regression test and full repository verification on candidate `64afb20c191262b6b647c9778a0749288b1d2001`.
+- **F1 — protected-main closure condition unavailable under current hosting capability:** accepted as a material external blocker. The HQ-0 safety requirement is preserved; it is not silently weakened into a process-only substitute merely to close the gate.
+- **F3–F10:** non-material; no HQ-0 correction required unless later evidence changes materiality.
+
 ## Exact next action
 
 ```text
-realign existing Draft PR #1 to the minimal HQ-0 candidate
-→ run aggregate repository verification
-→ establish/verify protected-main + required-check repository settings
-→ independent Fable review from exact candidate
-→ Lead adjudication of material findings
+operator selects a GitHub hosting/plan path that supports branch protection for this private repository
+→ configure main to require PR-based integration and the aggregate `required` check
+→ revalidate protection through GitHub repository state
+→ perform bounded Fable/Lead re-adjudication of F1/F2 against the final exact candidate
 → operator ratification of HQ-0
 → separate explicit merge authorization
 ```
