@@ -12,6 +12,7 @@ HQ-0 REPOSITORY FOUNDATION      OPERATOR-RATIFIED / NOT YET INTEGRATED
 HQ-0 INDEPENDENT REVIEW         CONVERGED / NO UNRESOLVED MATERIAL FINDINGS
 HQ-0 F2 VERIFIER DEFECT         RESOLVED / REGRESSION PROVEN
 HQ-0 F1 MAIN PROTECTION         RESOLVED / ACTIVE RULESET / PR + required / NO BYPASS
+HQ-0 FINAL REQUIRED             SUCCESS / RUN 32681619104
 HQ-1 COMPANY THESIS             NOT OPEN
 HQ-2 CATEGORY / MARKET / ICP    NOT OPEN
 HQ-3 PORTFOLIO ARCHITECTURE     NOT OPEN
@@ -40,7 +41,7 @@ HQ-0 must close all of the following:
 - fresh independent review for the cross-repository authority boundary;
 - explicit operator ratification and separate merge authorization.
 
-All technical, structural, protection, independent-review, and operator-ratification conditions are satisfied on the candidate. Integration remains intentionally blocked until a separate explicit merge authorization is given.
+All technical, structural, protection, independent-review, operator-ratification, and final-verification conditions are satisfied on the candidate. Integration remains intentionally blocked until a separate explicit merge authorization is given.
 
 ## Review and adjudication
 
@@ -60,13 +61,12 @@ RATIFICATION RECOMMENDATION     READY
 VERDICT                         CONVERGED
 ```
 
-The operator ratified HQ-0 on 2026-08-23. Ratification accepts the HQ-0 institutional foundation but does not authorize merge.
+The operator ratified HQ-0 on 2026-08-23. The ratified candidate then passed aggregate `required` run `32681619104` with both repository regression tests and full repository verification successful. Ratification does not authorize merge.
 
 ## Exact next action
 
 ```text
-run final aggregate `required` verification on the operator-ratified candidate
-→ obtain separate explicit merge authorization
+obtain separate explicit merge authorization
 → squash merge PR #1 only after that authorization
 → verify main after integration
 → then open HQ-1
