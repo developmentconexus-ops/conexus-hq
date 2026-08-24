@@ -12,7 +12,6 @@ HQ-0 REPOSITORY FOUNDATION      OPERATOR-RATIFIED / NOT YET INTEGRATED
 HQ-0 INDEPENDENT REVIEW         CONVERGED / NO UNRESOLVED MATERIAL FINDINGS
 HQ-0 F2 VERIFIER DEFECT         RESOLVED / REGRESSION PROVEN
 HQ-0 F1 MAIN PROTECTION         RESOLVED / ACTIVE RULESET / PR + required / NO BYPASS
-HQ-0 FINAL REQUIRED             SUCCESS / RUN 32681619104
 HQ-1 COMPANY THESIS             NOT OPEN
 HQ-2 CATEGORY / MARKET / ICP    NOT OPEN
 HQ-3 PORTFOLIO ARCHITECTURE     NOT OPEN
@@ -41,7 +40,7 @@ HQ-0 must close all of the following:
 - fresh independent review for the cross-repository authority boundary;
 - explicit operator ratification and separate merge authorization.
 
-All technical, structural, protection, independent-review, operator-ratification, and final-verification conditions are satisfied on the candidate. Integration remains intentionally blocked until a separate explicit merge authorization is given.
+All HQ-0 acceptance conditions except integration are satisfied. Integration remains intentionally blocked until a separate explicit merge authorization is given, and merge execution must use a candidate whose exact HEAD has a successful aggregate `required` check in GitHub.
 
 ## Review and adjudication
 
@@ -61,13 +60,14 @@ RATIFICATION RECOMMENDATION     READY
 VERDICT                         CONVERGED
 ```
 
-The operator ratified HQ-0 on 2026-08-23. The ratified candidate then passed aggregate `required` run `32681619104` with both repository regression tests and full repository verification successful. Ratification does not authorize merge.
+The operator ratified HQ-0 on 2026-08-23. Ratification accepts the HQ-0 institutional foundation but does not authorize merge. Exact-head CI evidence is owned by GitHub checks rather than copied into this mutable roadmap.
 
 ## Exact next action
 
 ```text
 obtain separate explicit merge authorization
-→ squash merge PR #1 only after that authorization
+→ confirm aggregate `required` SUCCESS on the exact candidate HEAD
+→ squash merge PR #1 only after both conditions hold
 → verify main after integration
 → then open HQ-1
 ```
