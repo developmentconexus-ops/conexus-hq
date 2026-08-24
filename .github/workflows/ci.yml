@@ -1,0 +1,24 @@
+name: required
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  required:
+    name: required
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify repository tests
+        run: python scripts/test_verify_repository.py
+
+      - name: Verify repository
+        run: python scripts/verify_repository.py
