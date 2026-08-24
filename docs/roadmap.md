@@ -8,10 +8,10 @@ This is the sole mutable current-stage/status/allowed-work/next-action authority
 ```text
 COMPANY NAME                    CONEXUS / WORKING NAME / NOT RATIFIED
 PRODUCT NAME                    CONEXUS OS / WORKING NAME / NOT RATIFIED
-HQ-0 REPOSITORY FOUNDATION      OPEN / ACTIVE / EXTERNAL PROTECTION BLOCKER
-HQ-0 FABLE REVIEW               NOT CONVERGED / MATERIAL=2 / NON-MATERIAL=8
-HQ-0 F2 VERIFIER DEFECT         CORRECTED / REGRESSION TEST GREEN
-HQ-0 F1 MAIN PROTECTION         BLOCKED BY CURRENT PRIVATE-REPO PLAN CAPABILITY
+HQ-0 REPOSITORY FOUNDATION      CANDIDATE CONVERGED / AWAITING OPERATOR RATIFICATION
+HQ-0 INDEPENDENT REVIEW         CONVERGED / NO UNRESOLVED MATERIAL FINDINGS
+HQ-0 F2 VERIFIER DEFECT         RESOLVED / REGRESSION PROVEN
+HQ-0 F1 MAIN PROTECTION         RESOLVED / ACTIVE RULESET / PR + required / NO BYPASS
 HQ-1 COMPANY THESIS             NOT OPEN
 HQ-2 CATEGORY / MARKET / ICP    NOT OPEN
 HQ-3 PORTFOLIO ARCHITECTURE     NOT OPEN
@@ -40,32 +40,37 @@ HQ-0 must close all of the following:
 - fresh independent review for the cross-repository authority boundary;
 - explicit operator ratification and separate merge authorization.
 
-## Current review adjudication
+All technical, structural, protection, and independent-review conditions are satisfied on the candidate. Operator ratification and separate merge authorization remain intentionally distinct human gates.
 
-Independent Fable review against candidate `3a33df62ba4928ded8346ce1a98a056136a07832` returned:
+## Review and adjudication
+
+The first independent Fable review found two material issues and eight non-material observations. Lead adjudication accepted both material findings:
+
+- **F2 — case-insensitive forbidden-path false positive:** corrected with a regression test and exact-component casing checks. The defect class was reproduced and the correction was independently revalidated on the affected platform class.
+- **F1 — protected-main merge gate:** the repository now has one active ruleset for the default branch requiring pull-request integration and the GitHub Actions check `required`; deletion and non-fast-forward changes are blocked; no ordinary bypass actor is configured.
+- **F3–F10:** remain non-material under current evidence.
+
+Final bounded Fable revalidation against substantive candidate `8b833c343ed31554ee4110dae8391c2ca520228e` returned:
 
 ```text
-VERDICT                       NOT CONVERGED
-MATERIAL FINDINGS             2
-NON-MATERIAL FINDINGS         8
-RATIFICATION RECOMMENDATION   NOT READY
+F1                              RESOLVED
+F2                              RESOLVED
+NEW MATERIAL FINDINGS           0
+RATIFICATION RECOMMENDATION     READY
+VERDICT                         CONVERGED
 ```
 
-Lead disposition:
-
-- **F2 — case-insensitive forbidden-path false positive:** accepted as a bounded implementation defect. A regression test first reproduced the missing exact-path behavior; the verifier now performs exact-component casing checks and the aggregate `required` job passes both the regression test and full repository verification on candidate `64afb20c191262b6b647c9778a0749288b1d2001`.
-- **F1 — protected-main closure condition unavailable under current hosting capability:** accepted as a material external blocker. The HQ-0 safety requirement is preserved; it is not silently weakened into a process-only substitute merely to close the gate.
-- **F3–F10:** non-material; no HQ-0 correction required unless later evidence changes materiality.
+This roadmap update is Lead adjudication/status alignment only; it does not change HQ-0 architecture or authority semantics.
 
 ## Exact next action
 
 ```text
-operator selects a GitHub hosting/plan path that supports branch protection for this private repository
-→ configure main to require PR-based integration and the aggregate `required` check
-→ revalidate protection through GitHub repository state
-→ perform bounded Fable/Lead re-adjudication of F1/F2 against the final exact candidate
-→ operator ratification of HQ-0
+operator ratification of HQ-0
+→ if ratified, record OPERATOR-RATIFIED / NOT YET INTEGRATED
+→ run final aggregate `required` verification on the ratified candidate
 → separate explicit merge authorization
+→ squash merge PR #1 only after that authorization
+→ verify main and then open HQ-1
 ```
 
 Do not open HQ-1 or ratify a company/product name while HQ-0 remains unintegrated.
