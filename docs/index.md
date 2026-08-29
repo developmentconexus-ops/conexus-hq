@@ -22,7 +22,8 @@ Normal work stays at five files or fewer. Exceed that only for a named material 
 | Company ↔ repository authority boundaries | [portfolio/map.md](portfolio/map.md) | one owning product repository when a semantic question exists | product implementation history |
 | Current institutional decisions | [decisions/index.md](decisions/index.md) | exact owning document named by the decision | review chronology |
 | HQ-0 design / exit contract | [phases/hq-0-repository-foundation.md](phases/hq-0-repository-foundation.md) | [development/repository-rules.md](development/repository-rules.md) | later company/brand research |
-| Company thesis / category / ICP | [roadmap.md](roadmap.md) until the owning gate opens | future owning authority only after created | speculative strategy files |
+| Company thesis | [company/thesis.md](company/thesis.md) | [roadmap.md](roadmap.md) for current HQ-1 status | category, ICP, naming, product implementation |
+| Category / market / ICP | [roadmap.md](roadmap.md) until HQ-2 opens | future owning authority only after created | speculative strategy files |
 | Brand architecture / naming / visual identity | [roadmap.md](roadmap.md) until the owning gate opens | future owning authority only after created | premature logo/palette artifacts |
 
 ## Authority hierarchy
