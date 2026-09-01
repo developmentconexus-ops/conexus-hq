@@ -12,7 +12,7 @@ HQ-0 REPOSITORY FOUNDATION      CLOSED / OPERATOR-RATIFIED / INTEGRATED
 HQ-0 INDEPENDENT REVIEW         CONVERGED / NO UNRESOLVED MATERIAL FINDINGS
 HQ-0 F2 VERIFIER DEFECT         RESOLVED / REGRESSION PROVEN
 HQ-0 F1 MAIN PROTECTION         RESOLVED / ACTIVE RULESET / PR + required / NO BYPASS
-HQ-1 COMPANY THESIS             NOT OPEN / NEXT
+HQ-1 COMPANY THESIS             OPEN / ACTIVE / CANDIDATE DRAFT
 HQ-2 CATEGORY / MARKET / ICP    NOT OPEN
 HQ-3 PORTFOLIO ARCHITECTURE     NOT OPEN
 HQ-4 BRAND ARCHITECTURE         NOT OPEN
@@ -40,43 +40,52 @@ Accepted and integrated invariants:
 - independent review for the cross-repository authority boundary;
 - explicit operator ratification and separate merge authorization.
 
-## Review and adjudication
+The operator ratified HQ-0 and separately authorized integration. PR #1 was squash-merged into `main` as `3c4f6b761273eee5887a9fb3845b6173edc01e91`; the final ratified candidate and integrated commit shared tree `eda578f4a8dcaf8bada3f932bc6c2076ac3d9110`. PR #3 then recorded the integration closeout.
 
-The first independent Fable review found two material issues and eight non-material observations. Lead adjudication accepted both material findings:
+## Current gate — HQ-1 Company Thesis
 
-- **F2 — case-insensitive forbidden-path false positive:** corrected with a regression test and exact-component casing checks. The defect class was reproduced and the correction was independently revalidated on the affected platform class.
-- **F1 — protected-main merge gate:** the repository now has one active ruleset for the default branch requiring pull-request integration and the GitHub Actions check `required`; deletion and non-fast-forward changes are blocked; no ordinary bypass actor is configured.
-- **F3–F10:** remain non-material under current evidence.
+HQ-1 defines why the company should exist before category, ICP, portfolio architecture, naming, or identity work becomes institutional authority.
 
-Final bounded Fable revalidation returned:
+Current HQ-1 scope:
 
-```text
-F1                              RESOLVED
-F2                              RESOLVED
-NEW MATERIAL FINDINGS           0
-RATIFICATION RECOMMENDATION     READY
-VERDICT                         CONVERGED
-```
+- structural enterprise problem;
+- core belief about software and AI adapting to the company;
+- vision of the programmable company;
+- company thesis and causal mechanism;
+- economic consequence / organizational leverage;
+- explicit non-goals;
+- reopen triggers proportional to the thesis.
 
-The operator ratified HQ-0 on 2026-08-23 and separately authorized integration. PR #1 was squash-merged into `main` as `3c4f6b761273eee5887a9fb3845b6173edc01e91` on 2026-08-23 local time. The integrated commit and the final ratified candidate share tree `eda578f4a8dcaf8bada3f932bc6c2076ac3d9110`, proving that the ratified repository tree is the tree integrated into `main`.
+The operator approved these meanings in dialogue. `docs/company/thesis.md` is the candidate durable owner. Written wording remains a candidate until operator review, independent challenge, adjudication, and explicit ratification.
+
+HQ-1 does **not** authorize:
+
+- category, market, ICP, or wedge selection;
+- portfolio prioritization or permanent application boundaries;
+- company/product naming or brand architecture;
+- business model or pricing;
+- Conexus OS Product architecture changes;
+- migration or semantic fusion of existing Product repositories.
 
 ## Exact next action
 
 ```text
-operator authorization to open HQ-1 — Company Thesis
-→ create a fresh HQ-1 candidate from verified main
-→ define the company thesis within HQ-1 scope
-→ independent challenge before ratification
+operator reviews the written HQ-1 candidate in docs/company/thesis.md
+→ bounded wording corrections if needed
+→ independent Fable challenge against the exact HQ-1 candidate
+→ Lead adjudication
+→ operator ratification of HQ-1
+→ separate explicit merge authorization
 ```
 
-HQ-1 is the next permitted gate but remains NOT OPEN until the operator explicitly opens it. Company/product naming remains unratified.
+Do not open HQ-2 while HQ-1 remains unratified and unintegrated.
 
 ## Program sequence
 
 | Gate | Owns | Opens after |
 | --- | --- | --- |
 | HQ-0 — Repository & Authority Foundation | repository purpose, authority boundaries, knowledge governance, review/CI envelope | CLOSED / INTEGRATED |
-| HQ-1 — Company Thesis | structural problem, vision, company thesis, non-goals | HQ-0 integrated + operator opens HQ-1 |
+| HQ-1 — Company Thesis | structural problem, vision, company thesis, non-goals | OPEN / ACTIVE |
 | HQ-2 — Category / Market / ICP | category, market framing, initial customer, wedge hypotheses | HQ-1 |
 | HQ-3 — Portfolio Architecture | platform/application relationships and portfolio rules | HQ-2 |
 | HQ-4 — Brand Architecture | company/product/sub-brand relationship | HQ-3 |
